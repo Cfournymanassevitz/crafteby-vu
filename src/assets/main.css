@@ -38,3 +38,20 @@ header{
   top: 60%;
   transform: translateY(-50%);
 }
+.form-control input {
+  width: 30rem;
+}
+.indicator{
+  display: flex;
+  align-items: center;
+}
+.logo-compte{
+  height: 1.5rem;
+  color: white;
+  margin: 1rem;
+}
+.logo-panier{
+  height: 2rem;
+  color: white;
+  margin: 1rem;
+}
