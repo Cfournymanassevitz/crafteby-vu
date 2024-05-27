@@ -3,6 +3,20 @@
 </script>
 
 <template>
+  <footer class="footer p-10 bg-base-200 text-base-content" id="confiance">
+    <nav>
+      <h6 class="footer-title">LIVRAISON OFFERTE</h6>
+      <p> Livraison offerte dès 100€ en France métropolitaine et dans les DOM-TOM</p>
+    </nav>
+    <nav>
+      <h6 class="footer-title">RETOURS ET ECHANGE GRATUITS</h6>
+      <p> 30 jours pour changer d'avis en france métropolitaine</p>
+    </nav>
+    <nav>
+      <h6 class="footer-title">PAYEMENT SECURISE</h6>
+      <p> Toutes vos transactions via Visa, Mastercard et Amex</p>
+    </nav>
+  </footer>
   <footer class="footer p-10 bg-base-200 text-base-content">
     <nav>
       <h6 class="footer-title">UNE QUESTION?</h6>

@@ -2,7 +2,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+*{
+  font-family: nuito, sans-serif;
+}
 body{
   background-color: #FCFAFA ;
 }
@@ -58,4 +60,17 @@ header{
 .items-footer{
 
 justify-items: center
+}
+#confiance{
+  color: #FCFAFA;
+    background-color: #1E2D4C;
+  justify-items: center;
+  align-items: center;
+}
+.footer > * {
+
+  display: grid;
+  place-items: start;
+  gap: 0.5rem;
+  justify-items: center;
 }
