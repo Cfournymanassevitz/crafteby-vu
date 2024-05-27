@@ -11,25 +11,30 @@
   justify-content: center;
   height: 100vh;
 }
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+header{
+  background-color:#1E2D4C ;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+}
+.form-control {
+  border-top: 1px solid #EA4E48;
+  border-right: 50px solid #EA4E48;
+  border-bottom: 1px solid #EA4E48;
+  border-left: 25px solid #EA4E48; /* Ajoute un contour rouge */
+  position: relative;
+  color: #1E2D4C;
+  border-radius: 10px;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
+.form-control::after {
+  content: url('..\assets\Loupe.png');
+  position: absolute;
+  right: -35px; /* Ajusté pour être à l'intérieur de la bordure */
+  top: 60%;
+  transform: translateY(-50%);
 }

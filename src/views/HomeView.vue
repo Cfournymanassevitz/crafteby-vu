@@ -5,7 +5,11 @@ import NavBar from '@/components/NavBar.vue'
 </script>
 
 <template>
-  <NavBar />
+  <header>
+
+      <NavBar />
+
+  </header>
   <Product />
 
 
