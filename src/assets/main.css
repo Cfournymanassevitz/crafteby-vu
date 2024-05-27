@@ -3,13 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
-#app{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+body{
+  background-color: #FCFAFA ;
 }
 header{
   background-color:#1E2D4C ;
@@ -32,7 +27,7 @@ header{
 }
 
 .form-control::after {
-  content: url('..\assets\Loupe.png');
+  content: url('..\assets\img\Loupe.png');
   position: absolute;
   right: -35px; /* Ajusté pour être à l'intérieur de la bordure */
   top: 60%;
@@ -54,4 +49,13 @@ header{
   height: 2rem;
   color: white;
   margin: 1rem;
+}
+.footer {
+
+  background-color: #FCFAFA;
+  justify-items: center
+}
+.items-footer{
+
+justify-items: center
 }

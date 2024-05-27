@@ -2,7 +2,7 @@
 
   <div class="logoC">
 
-    <img src="..\assets\LOGO.svg" alt="Logo">
+    <img src="..\assets\img\LOGO.svg" alt="Logo">
 
     <!--            <img src="..\assets\Icon.svg" alt="Logo">-->
   </div>
@@ -12,9 +12,9 @@
   </div>
 
         <div class="indicator">
-          <img src="..\assets\menu.svg" class="logo-compte">
-          <img src="..\assets\shopping-basket.svg" class="logo-panier">
-          <img src="..\assets\icon.svg" class="logo-compte">
+          <img src="..\assets\img\menu.svg" class="logo-compte">
+          <img src="..\assets\img\shopping-basket.svg" class="logo-panier">
+          <img src="..\assets\img\icon.svg" class="logo-compte">
         </div>
 
 
