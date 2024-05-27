@@ -74,3 +74,7 @@ justify-items: center
   gap: 0.5rem;
   justify-items: center;
 }
+.flex{
+  flex-direction: column-reverse;
+  align-items: center;
+}
