@@ -1,5 +1,5 @@
 <template>
-
+<header>
   <div class="logoC">
 
     <img src="..\assets\img\LOGO.svg" alt="Logo">
@@ -18,7 +18,7 @@
         </div>
 
 
-
+  </header>
 </template>
 
 <script setup lang="ts">
