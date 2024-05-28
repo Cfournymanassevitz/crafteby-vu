@@ -78,3 +78,28 @@ justify-items: center
   flex-direction: column-reverse;
   align-items: center;
 }
+.card-body{
+flex-direction: column;
+align-items: center;
+}
+#card {
+  position: relative; /* Ajoutez cette ligne */
+  min-height: 80px; /* Réduisez la hauteur minimale */
+  height: 80px; /* Réduisez la hauteur */
+  width: 120px;
+}
+
+.card figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img-card {
+  width: 300px; /* Définissez la largeur de l'image */
+  height: 300px; /* Définissez la hauteur de l'image */
+  object-fit: cover ; /* Assurez-vous que l'image couvre toute la zone sans déformation */
+}
+.btn-primary {
+  background-color: #EA4E48; /* Change la couleur de fond du bouton */
+  color: white; /* Change la couleur du texte du bouton */
+}

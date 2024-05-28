@@ -5,20 +5,21 @@ const { data: products } = useFetch('https://fakestoreapi.com/products?limit=21'
 </script>
 
 <template>
+<h1>Meilleures ventes</h1>
+
   <div class="p-12">
-    <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <ul role="list" class="grid grid-cols-1 gap-10 sm:grid-cols-4 lg:grid-cols-4">
       <li v-for="product in products" :key="product.id"
-          class="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow">
-        <div class="card card-compact w-96 bg-base-100 shadow-xl">
-          <figure><img :src="product.image" alt="" /></figure>
+          class="col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow" id="carte">
+          <figure><img :src="product.image" class="img-card"alt="image"  /></figure>
           <div class="card-body">
-            <h2 class="card-title">Shoes!</h2>
-            <p>{{ product.description }}</p>
+            <h2 class="card-title">{{ product.title}}</h2>
             <div class="card-actions justify-end">
-              <button class="btn btn-primary">Buy Now {{ product.price }}</button>
+              <p>{{ product.price }} €</p>
+              <button class="btn btn-primary">Ajouter au panier €</button>
             </div>
           </div>
-        </div>
+
       </li>
     </ul>
   </div>
