@@ -22,6 +22,7 @@ const cartStore = useCartStore()
 
 // Accès à l'action pour ajouter un produit au panier
 const addToCart = (product) => {
+  console.log('Adding to cart:', product)
   cartStore.addItem(product)
 }
 </script>

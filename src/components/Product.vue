@@ -1,7 +1,18 @@
 <script setup>
-import { useFetch } from '@vueuse/core'
 
-const { data: products } = useFetch('https://fakestoreapi.com/products?limit=21').json()
+  import { useFetch } from '@vueuse/core'
+  import { useCartStore } from '../stores/cartStore'
+
+  const { data: products } = useFetch('https://fakestoreapi.com/products?limit=21').json()
+
+  // Utilisation du store Pinia
+  const cartStore = useCartStore()
+
+  // Accès à l'action pour ajouter un produit au panier
+  const addToCart = (product) => {
+  console.log('Adding to cart:', product)
+  cartStore.addItem(product)
+}
 </script>
 
 <template>
@@ -17,7 +28,7 @@ const { data: products } = useFetch('https://fakestoreapi.com/products?limit=21'
             <h2 class="card-title">{{ product.title}}</h2>
             <div class="card-actions justify-end ">
               <p class="prix">{{ product.price }} €</p>
-              <button class="btn btn-primary ">Ajouter au panier €</button>
+              <button class="btn btn-error " @click="addToCart(product)">Ajouter au panier €</button>
             </div>
 
 

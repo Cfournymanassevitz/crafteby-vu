@@ -23,12 +23,12 @@ const router = createRouter({
       name: 'cart',
       component: CartView
 
+    },
+    {
+      path: '/detail/:id',
+      name: 'details',
+      component: () => import('../views/AcountView.vue')
     }
-    // {
-    //   path: '/detail/:id',
-    //   name: 'details',
-    //   component: () => import('../views/NotFoundView.vue')
-    // }
 
   ]
 })

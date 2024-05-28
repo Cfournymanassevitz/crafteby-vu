@@ -20,7 +20,7 @@
 
 <script setup>
 
-import { useCartStore } from '@/views/cartStore.js'
+import { useCartStore } from '@/stores/cartStore.js'
 
 const cartStore = useCartStore()
 

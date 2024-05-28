@@ -12,8 +12,12 @@
   </div>
 
         <div class="indicator">
+          <router-link to="/">
           <img src="..\assets\img\menu.svg" class="logo-compte">
-          <img src="..\assets\img\shopping-basket.svg" class="logo-panier">
+          </router-link>
+          <router-link to="/cart">
+          <img src="..\assets\img\shopping-basket.svg" class="logo-panier" >
+          </router-link>
           <img src="..\assets\img\icon.svg" class="logo-compte">
         </div>
 
