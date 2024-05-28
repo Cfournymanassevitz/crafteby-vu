@@ -2,12 +2,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 *{
   font-family: nuito, sans-serif;
 }
+
 body{
   background-color: #FCFAFA ;
 }
+
 header{
   background-color:#1E2D4C ;
   color: white;
@@ -74,10 +78,10 @@ justify-items: center
   gap: 0.5rem;
   justify-items: center;
 }
-.flex{
-  flex-direction: column-reverse;
-  align-items: center;
-}
+/*.flex{*/
+/*  flex-direction: column-reverse;*/
+/*  align-items: center;*/
+/*}*/
 .card-body{
 flex-direction: column;
 align-items: center;
@@ -89,17 +93,34 @@ align-items: center;
   width: 120px;
 }
 
+
 .card figure {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .img-card {
-  width: 300px; /* Définissez la largeur de l'image */
+  width: 409px; /* Définissez la largeur de l'image */
   height: 300px; /* Définissez la hauteur de l'image */
   object-fit: cover ; /* Assurez-vous que l'image couvre toute la zone sans déformation */
 }
 .btn-primary {
+right:0;
   background-color: #EA4E48; /* Change la couleur de fond du bouton */
-  color: white; /* Change la couleur du texte du bouton */
+  color: white;
+  border-color: #EA4E48/* Change la couleur du texte du bouton */
+}
+.card-body{
+  background-color: #eaecef;
+  object-fit: cover;
+  heihgt: auto;
+}
+h2{
+  font-family: nuito;
+  font-size: 25rem;
+  color: #1E2D4C;
+  font-size: large;
+  font-weight: bold;
+  align-items: center;
+  text-transform: capitalize;
 }

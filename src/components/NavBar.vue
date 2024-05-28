@@ -8,7 +8,7 @@
   </div>
   <div class="form-control">
 
-    <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
+    <input type="text" placeholder="Search" class="input input md:w-auto rounded-none"/>
   </div>
 
         <div class="indicator">

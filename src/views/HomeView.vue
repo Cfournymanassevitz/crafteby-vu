@@ -2,6 +2,7 @@
 import Product from '@/components/Product.vue'
 import NavBar from '@/components/NavBar.vue'
 import Footer from '@/components/Footer.vue'
+import Banniere from '@/components/Banniere.vue'
 
 </script>
 
@@ -11,13 +12,16 @@ import Footer from '@/components/Footer.vue'
     <NavBar />
 
   </header>
+  <Banniere />
+
+  <h2>Meilleures ventes</h2>
 
   <Product />
 
-<footer>
-  <Footer />
+  <footer>
+    <Footer />
 
-</footer>
+  </footer>
 
 
 </template>
