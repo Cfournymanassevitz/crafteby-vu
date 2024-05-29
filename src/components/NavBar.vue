@@ -4,7 +4,7 @@
 
     <img src="..\assets\img\LOGO.svg" alt="Logo">
 
-    <!--            <img src="..\assets\Icon.svg" alt="Logo">-->
+    <!--            <img src="..\assets\trash.svg" alt="Logo">-->
   </div>
   <div class="form-control">
 

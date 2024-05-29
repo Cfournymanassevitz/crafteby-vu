@@ -1,6 +1,6 @@
 <script setup>
-
-  import { useFetch } from '@vueuse/core'
+import { ref, onMounted} from 'vue'
+import { useFetch } from '@vueuse/core'
   import { useCartStore } from '../stores/cartStore'
 
   const { data: products } = useFetch('https://fakestoreapi.com/products?limit=21').json()
@@ -12,7 +12,15 @@
   const addToCart = (product) => {
   console.log('Adding to cart:', product)
   cartStore.addItem(product)
+    localStorage.setItem('cart', JSON.stringify(cartStore.items))
 }
+// Récupération du panier sauvegardé dans le localStorage
+onMounted(() => {
+  const savedCart = localStorage.getItem('cart')
+  if (savedCart) {
+    cartStore.items = JSON.parse(savedCart)
+  }
+})
 </script>
 
 <template>

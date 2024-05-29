@@ -139,3 +139,79 @@ Product {
   max-width: 1400px;
   margin: 0 auto;
 }
+
+/*--------------------------PANIER--------------------------*/
+
+.panier{
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+    justify-content: space-between;
+  width:330rem;
+}
+
+.article-panier{
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  justify-content: space-between;
+  width:50rem;
+  border: #e5e7eb 2px solid;
+  border-radius: 20px;
+  font-size: large;
+  margin: 1rem;
+  height: 20rem;
+  background-color: #f6f7f8;
+}
+
+.step{
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+    display: grid;
+    justify-items: center;
+}
+.panier{
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  justify-content: space-between;
+  width:100%; /* Changez la largeur à 100% ou à une valeur plus petite en rem */
+}
+
+.articles {
+  flex: 0.7; /* Ajustez la largeur flexible pour qu'elle ne dépasse pas 1 avec .recap */
+}
+
+.articles-recap {
+  display: flex;
+  flex-direction: row; /* Ajoutez cette ligne */
+  justify-content: space-between;
+}
+
+.recap {
+  display: flex;
+  flex: 0.3;
+  border: #e5e7eb 2px solid;
+  background-color: #FCFAFA;
+  height: 40rem;
+  background-color: #f6f7f8;
+  border-radius: 20px;
+  paging:20rem;
+  justify-content: center;
+}
+
+.poubelle{
+ display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: large;
+font-family: nuito;
+color: #1E2D4C;
+font-weight: bold;
+}
+
+.infoRecap{
+  border-spacing: 1rem;
+  padding: 3rem;
+}
