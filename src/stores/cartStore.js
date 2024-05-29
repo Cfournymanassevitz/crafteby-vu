@@ -16,6 +16,7 @@ export const useCartStore = defineStore('cart', {
       } else {
         this.items.push({ ...product, quantity: 1 })
       }
+      this.items = [...this.items]
       this.saveCart();
     },
     removeItem(productId) {
@@ -23,6 +24,7 @@ export const useCartStore = defineStore('cart', {
       if (index !== -1) {
         this.items.splice(index, 1)
       }
+      this.items = [...this.items]
       this.saveCart();
     },
     clearCart() {
