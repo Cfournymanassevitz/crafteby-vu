@@ -1,18 +1,18 @@
 <script setup>
-import { ref, onMounted} from 'vue'
+import { ref, onMounted } from 'vue'
 import { useFetch } from '@vueuse/core'
-  import { useCartStore } from '../stores/cartStore'
+import { useCartStore } from '../stores/cartStore'
 
-  const { data: products } = useFetch('https://fakestoreapi.com/products?limit=21').json()
+const { data: products } = useFetch('https://fakestoreapi.com/products?limit=21').json()
 
-  // Utilisation du store Pinia
-  const cartStore = useCartStore()
+// Utilisation du store Pinia
+const cartStore = useCartStore()
 
-  // Accès à l'action pour ajouter un produit au panier
-  const addToCart = (product) => {
+// Accès à l'action pour ajouter un produit au panier
+const addToCart = (product) => {
   console.log('Adding to cart:', product)
   cartStore.addItem(product)
-    localStorage.setItem('cart', JSON.stringify(cartStore.items))
+  localStorage.setItem('cart', JSON.stringify(cartStore.items))
 }
 // Récupération du panier sauvegardé dans le localStorage
 onMounted(() => {
@@ -29,18 +29,19 @@ onMounted(() => {
   <div class="p-12">
 
     <ul role="list" class="grid grid-cols-1 gap-10 sm:grid-cols-4 lg:grid-cols-4 rounded">
-      <li v-for="product in products" :key="product.id"
+      <router-link :to="{ name: 'detail', params: { id: product.id } }" v-for="product in products" :key="product.id">
+        <!-- Le contenu de votre lien ici -->
+      <li
           class="card-body col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow" id="carte">
-          <figure><img :src="product.image" class="img-card w-full h-full" alt="image"  /></figure>
+        <figure><img :src="product.image" class="img-card w-full h-full" alt="image" /></figure>
 
-            <h2 class="card-title">{{ product.title}}</h2>
-            <div class="card-actions justify-end ">
-              <p class="prix">{{ product.price }} €</p>
-              <button class="btn btn-error " @click="addToCart(product)">Ajouter au panier €</button>
-            </div>
-
-
+        <h2 class="card-title">{{ product.title }}</h2>
+        <div class="card-actions justify-end ">
+          <p class="prix">{{ product.price }} €</p>
+          <button class="btn btn-error " @click="addToCart(product)">Ajouter au panier €</button>
+        </div>
       </li>
+      </router-link>
     </ul>
   </div>
 </template>

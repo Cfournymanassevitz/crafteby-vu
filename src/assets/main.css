@@ -231,7 +231,38 @@ font-weight: bold;
   align-items: center;
   margin-bottom: 10rem;
   margin-top: 5rem;
+
 }
 .login label {
   margin-bottom: 1rem;
+}
+.btnlogin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+.register{
+  background-color: #f2f3f6;
+  border: #e5e7eb 2px solid;
+  margin: 5rem;
+  height: 30rem;
+  width: 50rem;
+display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 8px 8px 8px #9ca3af;
+}
+.centrereg{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10rem;
+  margin-top: 5rem;
 }
