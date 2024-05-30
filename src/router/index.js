@@ -3,6 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import CartView from '../views/CartView.vue'
 import AccountView from '../views/AcountView.vue'
 import DetailProduct from '../views/DetailProductView.vue'
+import OrderView from '../views/OrderView.vue'
+import ConfirmationView from '../views/ConfirmationView.vue'
 
 
 const router = createRouter({
@@ -37,12 +39,19 @@ const router = createRouter({
       component: DetailProduct
 
     },
+    {
+      path: '/order',
+      name: 'order',
+      component: OrderView
 
-    // {
-    //   path: '/product/:id',
-    //   name: 'product',
-    //   component: () => import('../views/ProductView.vue')
-    // }
+    },
+    {
+      path: '/confirmation',
+      name: 'confirmation',
+      component: ConfirmationView
+
+    },
+
 
   ]
 })

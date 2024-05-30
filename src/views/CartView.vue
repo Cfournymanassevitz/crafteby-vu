@@ -2,10 +2,10 @@
   <AppLayout>
   <div class="step">
   <ul class="steps">
-    <li class="step step-error">Register</li>
-    <li class="step step-error">Choose plan</li>
-    <li class="step">Purchase</li>
-    <li class="step">Receive Product</li>
+    <li class="step step-error">Panier</li>
+    <li class="step step-error">Authentification</li>
+    <li class="step step">Paiement & transport</li>
+    <li class="step">Confirmation</li>
   </ul>
   </div>
     <h3>Votre Panier</h3>
@@ -36,7 +36,9 @@
 </div >
 <div class="finrecap">
         <p>Total : {{ totalPrice }} €</p>
-  <button class="btn btn-outline btn-error">Commander</button>
+  <router-link to="/order">
+    <button class="btn btn-outline btn-error">Commander</button>
+  </router-link>
 </div>
       </div>
     </div>
@@ -46,7 +48,7 @@
 </template>
 
 <script setup>
-
+import { useAuthStore } from '@/stores/auth.store.js'
 import { useCartStore } from '@/stores/cartStore.js'
 import AppLayout from '@/components/AppLayout.vue'
 const cartStore = useCartStore()
@@ -55,5 +57,6 @@ const cartStore = useCartStore()
 const cartItems = cartStore.items
 const totalPrice = cartStore.totalPrice
 const removeFromCart = cartStore.removeItem
-const clearCart = cartStore.clearCart
+const authStore = useAuthStore()
+const user = authStore.user
 </script>
