@@ -29,19 +29,20 @@ onMounted(() => {
   <div class="p-12">
 
     <ul role="list" class="grid grid-cols-1 gap-10 sm:grid-cols-4 lg:grid-cols-4 rounded">
-      <router-link :to="{ name: 'detail', params: { id: product.id } }" v-for="product in products" :key="product.id">
-        <!-- Le contenu de votre lien ici -->
-      <li
-          class="card-body col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow" id="carte">
-        <figure><img :src="product.image" class="img-card w-full h-full" alt="image" /></figure>
 
+      <!-- Le contenu de votre lien ici -->
+      <li v-for="product in products" :key="product.id"
+          class="card-body col-span-1 divide-y divide-gray-200 rounded-lg bg-white shadow" id="carte">
+        <router-link :to="{ name: 'detail', params: { id: product.id } }">
+          <figure><img :src="product.image" class="img-card w-full h-full" alt="image" /></figure>
+        </router-link>
         <h2 class="card-title">{{ product.title }}</h2>
         <div class="card-actions justify-end ">
           <p class="prix">{{ product.price }} €</p>
           <button class="btn btn-error " @click="addToCart(product)">Ajouter au panier €</button>
         </div>
       </li>
-      </router-link>
+
     </ul>
   </div>
 </template>
