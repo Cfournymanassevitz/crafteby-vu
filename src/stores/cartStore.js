@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 
 export const useCartStore = defineStore('cart', {
   state: () => ({
-    items: JSON.parse(localStorage.getItem('cart') || [])
+    items:  [],
   }),
   getters: {
     itemCount: (state) => state.items.length,
@@ -33,5 +33,13 @@ export const useCartStore = defineStore('cart', {
     saveCart() {
       localStorage.setItem('cart', JSON.stringify(this.items))
     },
+
+    deleteCart() {
+      localStorage.removeItem('cart')
+      this.items = []
+    }
   }
+},
+  {
+  persist: true
 })

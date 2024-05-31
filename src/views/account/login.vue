@@ -34,7 +34,7 @@ function login() {
     </label>
     <div class="btnlogin">
     <div>
-      <router-link :to="user ? '/order':'/login'">
+      <router-link to="/">
       <button class="btn btn-wide btn-error" @click="login">Login</button>
       </router-link>
     </div>

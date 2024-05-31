@@ -36,8 +36,11 @@
 </div >
 <div class="finrecap">
         <p>Total : {{ totalPrice }} €</p>
-  <router-link to="/order">
+  <router-link v-if="authStore.token" to="/order">
     <button class="btn btn-outline btn-error">Commander</button>
+  </router-link>
+  <router-link v-else to="/account">
+    <button class="btn btn-outline btn-error">Se connecter</button>
   </router-link>
 </div>
       </div>
