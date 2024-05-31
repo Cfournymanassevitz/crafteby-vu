@@ -67,5 +67,6 @@ const user = authStore.user
 <style>
 .recap{
   padding: 20px;
+  box-shadow: #e5e8ea 0px 0px 10px;
 }
 </style>

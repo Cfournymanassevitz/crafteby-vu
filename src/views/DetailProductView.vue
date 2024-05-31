@@ -16,19 +16,26 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="hero min-h-screen bg-base-200" v-if="product">
-    <div class="hero-content flex-col lg:flex-row">
+<div class="productid">
+  <div class="hero hero-content flex-col lg:flex-row bg-base-200 border rounded-3xl border-vermillon-300 p-3 " v-if="product">
+
       <img :src="product.image" class="max-w-sm rounded-lg shadow-2xl" />
       <div>
         <h1 class="text-5xl font-bold">{{ product.title }}</h1>
         <p class="py-6">{{ product.description }}</p>
-        <p>{{ product.price }} €</p>
+        <p class="text-2xl">{{ product.quantited }}</p>
+        <p class="text-2xl">{{ product.price }} €</p>
         <button class="btn btn-primary" @click="addToCart(product)">Ajouter au panier</button>
       </div>
-    </div>
+
   </div>
+</div>
 </template>
 
 <style scoped>
+.productid{
+  margin: 10rem;
+
+}
 /* Votre CSS ici */
 </style>
