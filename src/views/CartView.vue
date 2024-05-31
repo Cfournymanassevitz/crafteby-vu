@@ -8,9 +8,9 @@
     <li class="step">Confirmation</li>
   </ul>
   </div>
-    <h3>Votre Panier</h3>
+    <h3 class="text-4xl">Votre Panier</h3>
 
-  <div class="panier">
+  <div class="panier ">
 
     <div class="articles-recap">
 
@@ -23,19 +23,20 @@
           <button @click="() => removeFromCart(product.id)" class="poubelle">Retirer <img src="..\assets\img\trash.svg"></button>
         </ul>
       </div>
+
 <div class="recap">
 
-      <div>
-        <h3> Récapitulatif : </h3>
+      <div class="recapitu grid gap-2">
+        <h3 class="text-4xl"> Récapitulatif : </h3>
 
-<div class="infoRecap">
+<div class="infoRecap grid gap-1">
         <p>Nombre d'articles : {{ cartItems.length }}</p>
         <p>Frais de port : 0 €</p>
         <p>Code promo </p>
   <input type="text" placeholder="Code" class="input input-bordered input-error w-full max-w-xs" />
 </div >
-<div class="finrecap">
-        <p>Total : {{ totalPrice }} €</p>
+<div class="finrecap grid gap-0.5">
+        <p class="text-2xl">Total : {{ totalPrice }} €</p>
   <router-link v-if="authStore.token" to="/order">
     <button class="btn btn-outline btn-error">Commander</button>
   </router-link>
@@ -63,3 +64,8 @@ const removeFromCart = cartStore.removeItem
 const authStore = useAuthStore()
 const user = authStore.user
 </script>
+<style>
+.recap{
+  padding: 20px;
+}
+</style>

@@ -8,7 +8,7 @@ import AppLayout from '@/components/AppLayout.vue'
 <template>
   <Banniere />
   <AppLayout>
-  <h2>Meilleures ventes</h2>
+  <h2 class="text-6xl text-align: center;">Meilleures ventes</h2>
 
   <Product />
   </AppLayout>
