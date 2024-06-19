@@ -2,9 +2,10 @@
 import { ref, onMounted } from 'vue'
 import { useFetch } from '@vueuse/core'
 import { useCartStore } from '../stores/cartStore'
+import { API_URL } from '@/config.js'
 
-const { data: products } = useFetch('https://fakestoreapi.com/products?limit=21').json()
-
+// const { data: products } = useFetch('https://fakestoreapi.com/products?limit=21').json()
+const { data: products } = useFetch(`${API_URL}/products`).json()
 // Utilisation du store Pinia
 const cartStore = useCartStore()
 
