@@ -1,4 +1,4 @@
-<!-- src/views/account/logout.vue -->
+
 <script setup>
 import authService from '@/services/authService.js'
 
@@ -13,7 +13,16 @@ const logout = async () => {
 }
 
 // Déconnectez l'utilisateur dès que le composant est monté
-onMounted(logout)
+// function handleLogout() {
+//   fetcher('post', 'logout').then(response => {
+//     if (response.status === 200) {
+//       user.value = null
+//       localStorage.removeItem('auth')
+//     } else {
+//       console.error(response)
+//     }
+//   })
+// }
 </script>
 
 <template>
