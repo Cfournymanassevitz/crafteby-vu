@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { API_URL } from '@/config.js'
 
 export const useAuthStore = defineStore('auth', {
   state: () => ({
@@ -8,21 +9,21 @@ export const useAuthStore = defineStore('auth', {
   getters: {
     },
   actions: {
-    login(username , password) {
-      fetch('https://fakestoreapi.com/auth/login',{
+    login(email , password) {
+      console.log('email et pass :',email, password)
+      fetch(`${API_URL}/login`,{
         method:'POST',
         headers:{
-          'Accept':'application/json',
           'Content-Type':'application/json'
         },
         body:JSON.stringify({
-          username,
+          email,
           password,
         })
       })
         .then(res=>res.json())
         .then(json=> {
-        console.log(json)
+        console.log('json :' , json)
         this.token = json.token
         })
 

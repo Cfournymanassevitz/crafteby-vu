@@ -5,7 +5,7 @@ import axios from 'axios'
 import { API_URL } from '@/config.js'
 
 
-const user = ref({ name: '', password: '' })
+const user = ref({ email: '', password: '' })
 const authStore = useAuthStore()
 
 //effectue une requête de connection a mon api Si la requête est réussie, vous réinitialisez l'utilisateur et supprimez le token d'authentification du localStorage.
@@ -52,17 +52,10 @@ onMounted(() => {
 })
 
 function login() {
-  fetcher('post', 'login', {
-    name: user.value.name,
-    password: user.value.password
-  }).then(response => {
-    if (response.status === 200) {
-      user.value = response.data.user
-      localStorage.setItem('auth', response.data.access_token)
-    } else {
-      console.error(response)
-    }
-  })
+  console.log('user : ' , user.value)
+
+  authStore.login(user.value.email, user.value.password)
+    .then(res=>console.log('res.json : ',res.json()))
 }
 
 
@@ -85,7 +78,7 @@ function login() {
         <path
           d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
       </svg>
-      <input v-model="user.name" type="text" class="grow" placeholder="Username" />
+      <input v-model="user.email" type="text" class="grow" placeholder="Username" />
     </label>
     <label class="input input-bordered flex items-center gap-2">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70">
