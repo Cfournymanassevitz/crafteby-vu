@@ -6,8 +6,7 @@ import axios from 'axios'
 import { API_URL } from '@/config.js'
 
 
-
-const user = ref({ email: '', password: '', name: ''})
+const user = ref({ email: '', password: '', name: '' })
 const authStore = useAuthStore()
 
 //effectue une requête de connection a mon api Si la requête est réussie, vous réinitialisez l'utilisateur et supprimez le token d'authentification du localStorage.
@@ -67,10 +66,16 @@ async function register() {
     // Stocke le token dans le localStorage et dans le store
     localStorage.setItem('token', response.data.token)
     authStore.token = response.data.token
+    authStore.login(user.value.email, user.value.password)
+      .then(() => {
+        if (authStore.token) {
+          console.log('Connexion réussie')
+        }
+      })
   } catch (error) {
     console.error('Erreur d\'inscription:', error)
-  }
 
+  }
 }
 </script>
 <template>
@@ -92,7 +97,7 @@ async function register() {
           <path
             d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
         </svg>
-        <input type="text" class="grow" placeholder="Username"  v-model="user.name" />
+        <input type="text" class="grow" placeholder="Username" v-model="user.name" />
       </label>
       <label class="input input-bordered flex items-center gap-2">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70">
@@ -112,12 +117,12 @@ async function register() {
       </label>
       <div class="grid grid-rows-2 grid-cols-[1fr,12fr] gap-2">
 
-          <input type="checkbox" checked="checked" class="checkbox" />
-          <p>Je donne mon accord pour la collecte des données RGPD*</p>
+        <input type="checkbox" checked="checked" class="checkbox" />
+        <p>Je donne mon accord pour la collecte des données RGPD*</p>
 
 
-          <input type="checkbox" checked="checked" class="checkbox" />
-          <p class="grids col">Je donne mon accord pour recevoir de les newsleter</p>
+        <input type="checkbox" checked="checked" class="checkbox" />
+        <p class="grids col">Je donne mon accord pour recevoir de les newsleter</p>
 
       </div>
       <router-link to="/">
