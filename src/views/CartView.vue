@@ -37,7 +37,7 @@
 </div >
 <div class="finrecap grid gap-0.5">
         <p class="text-2xl">Total : {{ totalPrice }} €</p>
-  <router-link v-if="authStore.token" to="/order">
+  <router-link v-if="token" to="/order">
     <button class="btn btn-outline btn-error">Commander</button>
   </router-link>
   <router-link v-else to="/account">
@@ -63,6 +63,7 @@ const totalPrice = cartStore.totalPrice
 const removeFromCart = cartStore.removeItem
 const authStore = useAuthStore()
 const user = authStore.user
+const token = authStore.token
 </script>
 <style>
 .recap{

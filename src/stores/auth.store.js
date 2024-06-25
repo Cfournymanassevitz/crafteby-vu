@@ -4,14 +4,14 @@ import { API_URL } from '@/config.js'
 export const useAuthStore = defineStore('auth', {
   state: () => ({
     user: null,
-    token: null,
+    token: localStorage.getItem('token') || null,
   }),
   getters: {
     },
   actions: {
     login(email , password) {
       console.log('email et pass :',email, password)
-      fetch(`${API_URL}/login`,{
+      return fetch(`${API_URL}/login`,{ // Ajoutez le mot-clé return ici
         method:'POST',
         headers:{
           'Content-Type':'application/json'
@@ -23,12 +23,16 @@ export const useAuthStore = defineStore('auth', {
       })
         .then(res=>res.json())
         .then(json=> {
-        console.log('json :' , json)
-        this.token = json.token
+          console.log('json :' , json)
+          this.token = json.token
+          localStorage.setItem('token', json.token)
         })
-
     },
-    logout() {
-    },
+    // logout() {
+    //   localStorage.removeItem('token')
+    //   localStorage.removeItem('user')
+    //   this.token = null
+    //   this.user = null
+    // },
   }
 })

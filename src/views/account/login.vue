@@ -16,8 +16,8 @@ async function fetcher(method, url, data = null) {
       Accept: 'application/json'
     }
 
-    if (localStorage.getItem('auth')) {
-      headers['Authorization'] = `Bearer ${localStorage.getItem('auth')}`
+    if (localStorage.token) {
+      headers['Authorization'] = `Bearer ${authStore.token}`
     }
 
     const response = await axios({
@@ -33,14 +33,14 @@ async function fetcher(method, url, data = null) {
     }
   } catch (error) {
     return {
-      status: error.response.status,
+      status: error.response.status || 500,
       data: null
     }
   }
 }
 
 onMounted(() => {
-  if (localStorage.getItem('auth')) {
+  if (authStore.token) {
     fetcher('get', 'users').then(response => {
       if (response.status === 200) {
         user.value = response.data
@@ -52,10 +52,16 @@ onMounted(() => {
 })
 
 function login() {
-  console.log('user : ' , user.value)
+  console.log('user : ', user.value)
 
   authStore.login(user.value.email, user.value.password)
-    .then(res=>console.log('res.json : ',res.json()))
+    .then(() => {
+      if (authStore.token) {
+
+        console.log('Connexion réussie')
+      }
+    })
+    .catch(error => console.error('Erreur de connexion:', error))
 }
 
 
