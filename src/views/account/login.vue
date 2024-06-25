@@ -46,8 +46,7 @@ onMounted(() => {
         user.value = response.data
       } else {
         console.error(response)
-      }
-    })
+      }})
   }
 })
 

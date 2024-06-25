@@ -22,7 +22,7 @@
     "pinia-plugin-persistedstate": "^3.2.1",
     "radix-vue": "^1.8.1",
     "vue": "^3.4.21",
-    "vue-router": "^4.3.0"
+    "vue-router": "^4.4.0"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",
