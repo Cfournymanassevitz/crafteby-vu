@@ -32,7 +32,9 @@
                 <router-link to="/account">
                 <li><a>Votre profil</a></li>
                 </router-link>
+                <router-link to="/account">
                 <li><a>Déconexion</a></li>
+                </router-link>
               </ul>
             </div>
             </div>
@@ -49,3 +51,9 @@ const cartStore = useCartStore()
 
 
 </script>
+<style scoped>
+.dropdown-content {
+  right: -20%;
+  color: #202f4d;
+}
+</style>

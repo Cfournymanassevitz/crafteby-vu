@@ -71,7 +71,7 @@ function login() {
 <template>
 
 
-  <h2>Connectez vous</h2>
+  <h2 class="text-4xl">Connectez vous</h2>
   <div class="avatar">
     <div class="w-24 rounded-full ring ring-error ring-offset-base-100 ring-offset-2">
       <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
