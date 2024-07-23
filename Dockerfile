@@ -1,16 +1,17 @@
-# Étape 1 : Construire l'application
-FROM node:14 AS build
+# Étape de build
+FROM node:16 as build-stage
 WORKDIR /app
-COPY package.json ./
-COPY package-lock.json ./
+COPY package*.json ./
 RUN npm install
-COPY . ./
-RUN npm run build
+COPY . .
+ARG VITE_API_ENDPOINT
+RUN VITE_API_ENDPOINT=$VITE_API_ENDPOINT npm run build
 
-# Étape 2 : Servir l'application avec Nginx
-FROM nginx:alpine
-COPY --from=build /app/dist /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/sites-enabled/default
+# Étape de production
+FROM nginx:stable-alpine as production-stage
+COPY --from=build-stage /app/dist /usr/share/nginx/html
+COPY --from=build-stage /app/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
-EXPOSE 80
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["nginx", "-g", "daemon off;"]
