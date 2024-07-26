@@ -45,7 +45,6 @@ header{
 }
 
 .form-control::after {
-  content: url('..\assets\img\Loupe.png');
   position: absolute;
   right: -35px; /* Ajusté pour être à l'intérieur de la bordure */
   top: 60%;

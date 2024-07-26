@@ -27,7 +27,7 @@
             <div class="dropdown dropdown-hover">
 
               <div tabindex="0"  class="logo-compte">
-                <img src="..\assets\img\icon.svg" alt="Logo">
+                <img src="..\assets\img\Icon.svg" alt="Logo">
               <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                 <router-link to="/account">
                 <li><a>Votre profil</a></li>
